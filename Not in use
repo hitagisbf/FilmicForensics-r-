@@ -1,5 +1,6 @@
-export const movieQuizz = {
-  questions: [
+
+//export const movieQuizz = {
+//  questions: [
     {
       question:
         "Which of the following movie genres are you interested in seeing",
