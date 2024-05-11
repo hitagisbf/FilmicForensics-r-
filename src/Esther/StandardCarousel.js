@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import Ratings from "./Ratings";
+import Trailerlink from "./Trailerlink";
 
 function StandardCarousel() {
   const [movieList, setMovieList] = useState([]);
@@ -48,9 +48,10 @@ function StandardCarousel() {
 
             <div class="movie-action">
               <span class="movie-play">
-                <a href="./.">
-                  <FontAwesomeIcon icon={faPlayCircle} /> Play Trailer
-                </a>
+                <Trailerlink
+                  mediaId={`${item.id}`}
+                  mediaType={`${item.media_type}`}
+                />
               </span>
               <span class="movie-reviews">
                 <a href="./.">
@@ -67,6 +68,23 @@ function StandardCarousel() {
 }
 function yearOnly(aDate) {
   return aDate.split("-")[0];
+}
+
+async function returnTrailerYoutubeVideoLink(movieId) {
+  var json = await fetchJSON(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=d98b6a4a470bc2415959e8cfff5c445e&language=en-US`
+  );
+  console.log(json?.results[0]?.key);
+  let youtubeKey = "29zQBzteAh0";
+  return `https://www.youtube.com/watch?v=${youtubeKey}`;
+}
+
+function fetchJSON(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 export default StandardCarousel;
