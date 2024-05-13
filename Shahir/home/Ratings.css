@@ -1,66 +1,30 @@
-.thumbs-wrapper{
-    display: none;
-}
-.icon{
-    color:#BE3144;
-}
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStarHalfStroke, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons";
+import "./Ratings.css";
 
-.movie-info{
-    color: white;
+const Ratings = (props) => {
+  let starRating = (parseFloat(props.val) / 10) * 5;
 
-    position: fixed;
-    bottom: 100px;
-    text-align: left;
-    padding-left: 50px;
-    width:100%;
-}
+  let numFullStars = Math.floor(starRating);
+  let numHalfStars = starRating - numFullStars > 0 ? 1 : 0;
+  let numEmptyStars = 5 - (numFullStars + numHalfStars);
 
-.movie-title{
-    font-size: 35px;
-    font-weight: bold;
-}
+  let starSAraay = [];
+  for (let i = 0; i < numFullStars; i++) {
+    starSAraay.push(<FontAwesomeIcon icon={faStarFull} className="icon" />);
+  }
+  for (let i = 0; i < numHalfStars; i++) {
+    starSAraay.push(
+      <FontAwesomeIcon icon={faStarHalfStroke} className="icon" />
+    );
+  }
+  for (let i = 0; i < numEmptyStars; i++) {
+    starSAraay.push(<FontAwesomeIcon icon={faStar} className="icon" />);
+  }
 
-.movie-desc{
-    font-size: 12px;
-    font-weight: bolder;
-    width:350px
-}
+  return <div>{starSAraay}</div>;
+};
 
-.movie-action{
-    margin-top: 10px;
-
-    a {
-        text-decoration: none;
-        color:#BE3144;
-    }
-
-    a:hover{
-        text-decoration: underline;
-        color:#22092C;
-    } 
-
-    span{
-        height: 40px;
-        display: inline-flex;
-        align-items: center;
-    }
-}
-
-.movie-play{
-    display: inline-block;
-    background-color:#FFF;
-    color:rgb(95, 69, 69);
-    border-radius: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.movie-reviews{
-    display: inline-block;
-    background-color: #6a6868;
-    color:#fff;
-    border-radius: 3px;    
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 15px;
-}
+export default Ratings;
