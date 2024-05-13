@@ -37,21 +37,21 @@ const StandardCarousel = () => {
             src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
             alt={`${item.original_title ? item.original_title : item.name}`}
           />
-          <div class="movie-info">
+          <div class="oomovie-info">
             <p class="movie-title">
               {`${item.original_title ? item.original_title : item.name}`}
             </p>
-            <p class="movie-desc">{`${item.overview}`}</p>
+            <p class="oomovie-desc">{`${item.overview}`}</p>
 
             <Ratings val={`${item.vote_average}`}> </Ratings>
 
-            <div class="movie-action">
-              <span class="movie-play">
+            <div class="oomovie-action">
+              <span class="oomovie-play">
                 <a href="./.">
                   <FontAwesomeIcon icon={faPlayCircle} /> Play Trailer
                 </a>
               </span>
-              <span class="movie-reviews">
+              <span class="oomovie-reviews">
                 <a href="./.">
                   <FontAwesomeIcon icon={faCircleInfo} /> Reviews
                 </a>
