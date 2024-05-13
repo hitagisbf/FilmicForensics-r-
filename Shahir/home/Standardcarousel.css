@@ -1,7 +1,7 @@
-.custom-carousel{
+.oocustom-carousel{
     height: 1500px;
 }
-.movie-info{
+.oomovie-info{
     color: white;
 
     position: fixed;
@@ -16,17 +16,17 @@
     font-weight: bold;
 }
 
-.movie-desc{
+.oomovie-desc{
     font-size: 12px;
     font-weight: bolder;
     width:350px
 }
 
-.movie-action{
+.oomovie-action{
     margin-top: 10px;
 }
 
-.movie-play{
+.oomovie-play{
     display: inline-block;
     background-color:#FFF;
     color:black;
@@ -35,7 +35,7 @@
     padding-right: 10px;
 }
 
-.movie-reviews{
+.oomovie-reviews{
     display: inline-block;
     background-color: #6a6868;
     color:#fff;
