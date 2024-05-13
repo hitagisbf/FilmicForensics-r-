@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import MovieReviews from '../brit/MovieReviews';
+
 
 const DetailedMovie = () => {
   const { id } = useParams();
@@ -44,8 +46,9 @@ const DetailedMovie = () => {
   return (
     <div>
       <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
+      <p style={{color: 'white'}}>{movie.overview}</p>
       {/* Add review form here */}
+      <MovieReviews/>
     </div>
   );
 };
