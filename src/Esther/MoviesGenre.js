@@ -4,7 +4,6 @@ import "./MoviesGenre.css";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
-import name from "function.prototype.name/implementation";
 
 //
 
@@ -37,10 +36,7 @@ function MoviesGenre(props) {
                 alt={`${item.original_title ? item.original_title : item.name}`}
               />
               <div class="movgenre-name">
-                <a href="./.">
-                  {" "}
-                  {item.original_title ? item.original_title : item.name}{" "}
-                </a>
+                {item.original_title ? item.original_title : item.name}{" "}
               </div>
             </div>
           ))}

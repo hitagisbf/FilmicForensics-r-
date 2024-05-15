@@ -20,6 +20,8 @@ function Genres() {
     AllGenres();
   }, []);
 
+  let calcImage = "Gienres";
+
   return (
     <body className="app">
       <Header tasteProfileOn="false" />
@@ -28,10 +30,10 @@ function Genres() {
         <div>
           {genreList.map((item) => (
             <div class="genre-card">
-              <img src={Gienres} />
-              <div class="genre-name">
-                <a href={`./MoviesGenre/${item.id}`}> {item.name} </a>{" "}
-              </div>
+              <a href={`./MoviesGenre/${item.id}`}>
+                <img src={returnImage(item.name, calcImage)} />
+                <div class="genre-name">{item.name} </div>
+              </a>
             </div>
           ))}
         </div>
@@ -44,6 +46,18 @@ function Genres() {
       <Footer />
     </body>
   );
+}
+
+function returnImage(gname, defaultImg) {
+  let m;
+  try {
+    m = require("../images/" + gname + ".jpeg");
+    // do stuff
+  } catch (ex) {
+    m = require("../images/" + defaultImg + ".jpeg");
+  }
+
+  return m;
 }
 
 export default Genres;
