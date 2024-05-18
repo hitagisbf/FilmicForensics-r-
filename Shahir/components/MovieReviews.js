@@ -12,11 +12,6 @@ const UserReview = ({ review }) => {
   };
   return (
     <div className="user-review">
-      <div className="star-rating">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className={i < review.rating ? "star" : "star-empty"}>&#9733;</span>
-        ))}
-      </div>
       <h3 style={{ color: 'white' }}>{review.author}</h3>
       <p style={{ color: 'white' }}>
         {showFullContent ? review.content : `${review.content.slice(0, 500)}...`}
