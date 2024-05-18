@@ -25,13 +25,6 @@ const ReviewForm = ({ onClose }) => {
       <div className="review-overlay" onClick={onClose}></div> {/* Overlay */}
       <div className="review-form-popup">
         <span className="close" onClick={onClose}>&times;</span>
-          {/* <div className="star-rating">
-            <h3>Movie Title (YYYY)</h3>
-            <p>YOUR RATING</p>
-            {[...Array(5)].map((_, index) => (
-              <span key={index} className={`star ${index < 3 ? 'filled' : ''}`}>&#9733;</span>
-            ))}
-          </div> */}
         <div className="movie-info">
           
         </div>
